@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Elan Finance Tracker - Neumorphism</title>
+  <title>Elan Finance Tracker</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  
+
   <style>
-    /* --- Neumorphism Theme & Responsive Layout --- */
     :root {
       --bg-color: #e0e5ec;
       --primary-color: #4a76ff;
@@ -36,18 +34,18 @@
     }
 
     .main-title {
-        font-weight: 700;
-        color: var(--text-color);
-        margin-bottom: 2rem;
-        text-shadow: 1px 1px 2px var(--shadow-light);
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px var(--shadow-light);
     }
-    
+
     .neumorphic-card {
-        background: var(--bg-color);
-        padding: 25px;
-        border-radius: var(--neumorphic-radius);
-        box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
-        margin-bottom: 2rem;
+      background: var(--bg-color);
+      padding: 25px;
+      border-radius: var(--neumorphic-radius);
+      box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+      margin-bottom: 2rem;
     }
 
     .summary-grid {
@@ -58,105 +56,140 @@
     }
 
     .summary-item {
-        background: var(--bg-color);
-        padding: 20px;
-        border-radius: var(--neumorphic-radius);
-        box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: var(--neumorphic-radius);
+      box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
     }
+
     .summary-item strong {
-        font-size: 1.5rem;
-        display: block;
-    }
-    .summary-item span {
-        font-size: 1rem;
+      font-size: 1.5rem;
+      display: block;
     }
 
     .form-control, .form-select {
-        background: var(--bg-color);
-        border: none;
-        height: 50px;
-        border-radius: 10px;
-        padding-left: 15px;
-        color: var(--text-color);
-        box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
-        transition: box-shadow 0.2s ease-in-out;
+      background: var(--bg-color);
+      border: none;
+      height: 50px;
+      border-radius: 10px;
+      padding-left: 15px;
+      color: var(--text-color);
+      box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
     }
+
     .form-control:focus, .form-select:focus {
-        background: var(--bg-color);
-        color: var(--text-color);
-        box-shadow: inset 1px 1px 2px var(--shadow-dark), inset -1px -1px 2px var(--shadow-light), 
-                    2px 2px 4px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
-        outline: none;
+      box-shadow: inset 1px 1px 2px var(--shadow-dark), inset -1px -1px 2px var(--shadow-light), 
+                  2px 2px 4px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
+      outline: none;
     }
-    
+
     .btn-neumorphic {
-        width: 100%;
-        height: 50px;
-        border: none;
-        border-radius: 10px;
-        font-weight: 600;
-        color: var(--primary-color);
-        background: var(--bg-color);
-        box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
-        transition: all 0.2s ease-in-out;
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      color: var(--primary-color);
+      background: var(--bg-color);
+      box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
     }
+
     .btn-neumorphic:hover {
-        color: var(--primary-color);
-        box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+      box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
     }
+
     .btn-neumorphic:active {
-        color: var(--primary-color);
-        box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light) !important;
-        transform: translateY(1px);
+      box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light) !important;
+      transform: translateY(1px);
     }
 
     .table-responsive {
-        border-radius: var(--neumorphic-radius);
-        box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
-        padding: 15px;
+      border-radius: var(--neumorphic-radius);
+      box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+      padding: 15px;
     }
-    .table {
-        border-collapse: separate;
-        border-spacing: 0 10px;
-        background-color: transparent;
-    }
+
     .table thead th {
-        border: none;
-        color: var(--text-color);
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 0.5px;
-        padding: 15px;
+      border: none;
+      color: var(--text-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      padding: 15px;
     }
+
     .table tbody tr {
-        background-color: var(--bg-color);
-        border-radius: 10px;
-        box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+      background-color: var(--bg-color);
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
     }
+
     .table td {
-        border: none;
-        vertical-align: middle;
-        padding: 15px;
+      border: none;
+      vertical-align: middle;
+      padding: 15px;
     }
-    .table tbody tr td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
-    .table tbody tr td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
-    .table tfoot td { font-weight: bold; padding-top: 20px; }
-    
+
     .btn-action {
-        background: transparent;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 8px;
-        color: var(--text-color);
-        transition: all 0.2s ease;
+      background: transparent;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 8px;
+      color: var(--text-color);
     }
+
     .btn-action.btn-edit:hover { background-color: #ffc107; color: white; }
     .btn-action.btn-delete:hover { background-color: #dc3545; color: white; }
 
     #datepicker { z-index: 1100 !important; }
 
     @media print { .no-print { display: none !important; } }
+
+    /* SPEED DIAL */
+    .speed-dial {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1050;
+    }
+
+    .fab-main {
+      background: var(--bg-color);
+      color: var(--primary-color);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .fab-options {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .fab-options button {
+      background: var(--bg-color);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.2rem;
+      box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+      cursor: pointer;
+    }
+
+    #fabToggle:checked + .fab-main + .fab-options {
+      display: flex;
+    }
   </style>
 </head>
 <body>
@@ -210,7 +243,7 @@
   <div class="neumorphic-card">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
       <h5 class="mb-0">Transaction History</h5>
-      <button class="btn-neumorphic no-print" onclick="downloadPDF()" style="width: 150px; height: 40px;">Download PDF</button>
+      <!-- <button class="btn-neumorphic no-print" onclick="downloadPDF()" style="width: 150px; height: 40px;">Download PDF</button> -->
     </div>
 
     <!-- Filter Controls -->
@@ -251,188 +284,194 @@
   </div>
 </div>
 
-<script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+  <!-- SPEED DIAL -->
 
-  const supabase = createClient(
-    'https://eqnjxjevzheekychzwus.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxbmp4amV2emhlZWt5Y2h6d3VzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzg0NzUsImV4cCI6MjA2NzExNDQ3NX0.ls15Lc6usmTUU9P6GMxLyum0W-N-nxBqKaWQ11_5Q9o'
-  );
+  <div class="speed-dial no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+    <input type="checkbox" id="fabToggle" hidden />
+    <label for="fabToggle" class="fab-main" title="Menu"><span>☰</span></label>
+    <div class="fab-options" style="flex-direction: column; align-items: center; margin-top: 10px;">
+      <button onclick="downloadPDF()" title="Download PDF">⬇️</button>
+      <button onclick="window.print()" title="Print">🖨️</button>
+    </div>
+  </div>
 
-  // Form Elements
-  const form = document.getElementById('transactionForm');
-  const description = document.getElementById('description');
-  const amount = document.getElementById('amount');
-  const type = document.getElementById('type');
-  const datepicker = document.getElementById('datepicker');
-  
-  // Display Elements
-  const transactionList = document.getElementById('transactionList');
-  const balanceEl = document.getElementById('balance');
-  const incomeTotalEl = document.getElementById('incomeTotal');
-  const expenseTotalEl = document.getElementById('expenseTotal');
-  
-  // Filter Elements
-  const filterYear = document.getElementById('filterYear');
-  const filterMonth = document.getElementById('filterMonth');
-  const filterType = document.getElementById('filterType');
-  const filterDescription = document.getElementById('filterDescription');
-  const resetFiltersBtn = document.getElementById('resetFilters');
 
-  let transactions = [];
-  let editId = null;
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js';
 
-  $(function () {
-    $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" }).datepicker("setDate", new Date());
-  });
-  
-  async function fetchTransactions() {
-    const { data } = await supabase.from('transactions').select('*').order('created_at', { ascending: false });
-    transactions = data;
-    if (filterYear.options.length <= 1) {
-        populateFilterOptions();
+    const supabase = createClient(
+      'https://eqnjxjevzheekychzwus.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxbmp4amV2emhlZWt5Y2h6d3VzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzg0NzUsImV4cCI6MjA2NzExNDQ3NX0.ls15Lc6usmTUU9P6GMxLyum0W-N-nxBqKaWQ11_5Q9o'
+    );
+
+    const form = document.getElementById('transactionForm');
+    const description = document.getElementById('description');
+    const amount = document.getElementById('amount');
+    const type = document.getElementById('type');
+    const datepicker = document.getElementById('datepicker');
+
+    const transactionList = document.getElementById('transactionList');
+    const balanceEl = document.getElementById('balance');
+    const incomeTotalEl = document.getElementById('incomeTotal');
+    const expenseTotalEl = document.getElementById('expenseTotal');
+
+    const filterYear = document.getElementById('filterYear');
+    const filterMonth = document.getElementById('filterMonth');
+    const filterType = document.getElementById('filterType');
+    const filterDescription = document.getElementById('filterDescription');
+    const resetFiltersBtn = document.getElementById('resetFilters');
+
+    let transactions = [];
+    let editId = null;
+
+    $(function () {
+      $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" }).datepicker("setDate", new Date());
+    });
+
+    async function fetchTransactions() {
+      const { data } = await supabase.from('transactions').select('*').order('created_at', { ascending: false });
+      transactions = data;
+      if (filterYear.options.length <= 1) populateFilterOptions();
+      applyFilters();
     }
-    applyFilters();
-  }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const newTx = {
-      description: description.value,
-      amount: parseFloat(amount.value),
-      type: type.value,
-      created_at: new Date(datepicker.value).toISOString()
-    };
-    if (editId) {
-      await supabase.from('transactions').update(newTx).eq('id', editId);
-      editId = null;
-    } else {
-      await supabase.from('transactions').insert([newTx]);
-    }
-    form.reset();
-    type.value = 'income';
-    $("#datepicker").datepicker("setDate", new Date());
-    await fetchTransactions();
-  });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const newTx = {
+        description: description.value,
+        amount: parseFloat(amount.value),
+        type: type.value,
+        created_at: new Date(datepicker.value).toISOString()
+      };
+      if (editId) {
+        await supabase.from('transactions').update(newTx).eq('id', editId);
+        editId = null;
+      } else {
+        await supabase.from('transactions').insert([newTx]);
+      }
+      form.reset();
+      type.value = 'income';
+      $("#datepicker").datepicker("setDate", new Date());
+      await fetchTransactions();
+    });
 
-  async function deleteTransaction(id) {
-    if (confirm('Are you sure you want to delete this transaction?')) {
+    async function deleteTransaction(id) {
+      if (confirm('Are you sure you want to delete this transaction?')) {
         await supabase.from('transactions').delete().eq('id', id);
         await fetchTransactions();
+      }
     }
-  }
 
-  function editTransaction(id) {
-    const tx = transactions.find(t => t.id === id);
-    if (!tx) return;
-    description.value = tx.description;
-    amount.value = tx.amount;
-    type.value = tx.type;
-    $("#datepicker").datepicker("setDate", new Date(tx.created_at));
-    editId = tx.id;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    function editTransaction(id) {
+      const tx = transactions.find(t => t.id === id);
+      if (!tx) return;
+      description.value = tx.description;
+      amount.value = tx.amount;
+      type.value = tx.type;
+      $("#datepicker").datepicker("setDate", new Date(tx.created_at));
+      editId = tx.id;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-  window.editTransaction = editTransaction;
-  window.deleteTransaction = deleteTransaction;
+    window.editTransaction = editTransaction;
+    window.deleteTransaction = deleteTransaction;
 
-  function populateFilterOptions() {
-    const years = [...new Set(transactions.map(tx => new Date(tx.created_at).getFullYear()))];
-    filterYear.innerHTML = '<option value="all">All Years</option>';
-    years.sort((a, b) => b - a).forEach(year => {
+    function populateFilterOptions() {
+      const years = [...new Set(transactions.map(tx => new Date(tx.created_at).getFullYear()))];
+      filterYear.innerHTML = '<option value="all">All Years</option>';
+      years.sort((a, b) => b - a).forEach(year => {
         filterYear.innerHTML += `<option value="${year}">${year}</option>`;
-    });
+      });
 
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    filterMonth.innerHTML = '<option value="all">All Months</option>';
-    months.forEach((month, index) => {
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      filterMonth.innerHTML = '<option value="all">All Months</option>';
+      months.forEach((month, index) => {
         filterMonth.innerHTML += `<option value="${index}">${month}</option>`;
-    });
-  }
+      });
+    }
 
-  function applyFilters() {
+    function applyFilters() {
       const year = filterYear.value;
       const month = filterMonth.value;
       const type = filterType.value;
       const descriptionQuery = filterDescription.value.toLowerCase();
 
-      let filteredTransactions = transactions.filter(tx => {
-          const txDate = new Date(tx.created_at);
-          const yearMatch = (year === 'all') || (txDate.getFullYear() == year);
-          const monthMatch = (month === 'all') || (txDate.getMonth() == month);
-          const typeMatch = (type === 'all') || (tx.type === type);
-          const descriptionMatch = tx.description.toLowerCase().includes(descriptionQuery);
-          
-          return yearMatch && monthMatch && typeMatch && descriptionMatch;
+      const filteredTransactions = transactions.filter(tx => {
+        const txDate = new Date(tx.created_at);
+        return (year === 'all' || txDate.getFullYear() == year) &&
+               (month === 'all' || txDate.getMonth() == month) &&
+               (type === 'all' || tx.type === type) &&
+               tx.description.toLowerCase().includes(descriptionQuery);
       });
-      
-      renderTransactions(filteredTransactions);
-  }
 
-  filterYear.addEventListener('change', applyFilters);
-  filterMonth.addEventListener('change', applyFilters);
-  filterType.addEventListener('change', applyFilters);
-  filterDescription.addEventListener('input', applyFilters);
-  resetFiltersBtn.addEventListener('click', () => {
+      renderTransactions(filteredTransactions);
+    }
+
+    function renderTransactions(list) {
+      transactionList.innerHTML = '';
+      let incomeTotal = 0, expenseTotal = 0;
+
+      if (list.length === 0) {
+        transactionList.innerHTML = '<tr><td colspan="6" class="text-center py-5">No transactions match the current filters.</td></tr>';
+      } else {
+        list.forEach((tx, index) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${tx.description}</td>
+            <td>₹${tx.amount.toFixed(2)}</td>
+            <td class="text-${tx.type === 'income' ? 'success' : 'danger'}"><strong>${tx.type}</strong></td>
+            <td>${formatDate(tx.created_at)}</td>
+            <td class="no-print">
+              <button class="btn-action btn-edit" onclick="editTransaction('${tx.id}')">Edit</button>
+              <button class="btn-action btn-delete" onclick="deleteTransaction('${tx.id}')">Delete</button>
+            </td>
+          `;
+          transactionList.appendChild(row);
+          if (tx.type === 'income') incomeTotal += tx.amount;
+          else expenseTotal += tx.amount;
+        });
+      }
+
+      incomeTotalEl.textContent = incomeTotal.toFixed(2);
+      expenseTotalEl.textContent = expenseTotal.toFixed(2);
+      balanceEl.textContent = (incomeTotal - expenseTotal).toFixed(2);
+      document.getElementById("tableTotal").textContent = `Income: ₹${incomeTotal.toFixed(2)} | Expense: ₹${expenseTotal.toFixed(2)} | Net: ₹${(incomeTotal - expenseTotal).toFixed(2)}`;
+    }
+
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    }
+
+    document.getElementById('resetFilters').addEventListener('click', () => {
       filterYear.value = 'all';
       filterMonth.value = 'all';
       filterType.value = 'all';
       filterDescription.value = '';
       applyFilters();
-  });
+    });
 
-  function formatDate(dateStr) {
-    const date = new Date(dateStr);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
+    filterYear.addEventListener('change', applyFilters);
+    filterMonth.addEventListener('change', applyFilters);
+    filterType.addEventListener('change', applyFilters);
+    filterDescription.addEventListener('input', applyFilters);
 
-  function renderTransactions(transactionsToDisplay) {
-    transactionList.innerHTML = '';
-    let incomeTotal = 0, expenseTotal = 0;
+    window.downloadPDF = () => {
+      const element = document.getElementById('transactionTableSection');
+      html2pdf().set({
+        margin: 0.5,
+        filename: 'Transaction_History.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, logging: false },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(element).save();
+    };
 
-    if (!transactionsToDisplay || transactionsToDisplay.length === 0) {
-        transactionList.innerHTML = '<tr><td colspan="6" class="text-center py-5">No transactions match the current filters.</td></tr>';
-    } else {
-        transactionsToDisplay.forEach((tx, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${tx.description}</td>
-                <td>₹${tx.amount.toFixed(2)}</td>
-                <td class="text-${tx.type === 'income' ? 'success' : 'danger'}"><strong>${tx.type}</strong></td>
-                <td>${formatDate(tx.created_at)}</td>
-                <td class="no-print">
-                  <button class="btn-action btn-edit" onclick="editTransaction('${tx.id}')">Edit</button>
-                  <button class="btn-action btn-delete" onclick="deleteTransaction('${tx.id}')">Delete</button>
-                </td>
-            `;
-            transactionList.appendChild(row);
-            if (tx.type === 'income') incomeTotal += tx.amount;
-            else expenseTotal += tx.amount;
-        });
-    }
-
-    incomeTotalEl.textContent = incomeTotal.toFixed(2);
-    expenseTotalEl.textContent = expenseTotal.toFixed(2);
-    balanceEl.textContent = (incomeTotal - expenseTotal).toFixed(2);
-    document.getElementById("tableTotal").textContent = `Income: ₹${incomeTotal.toFixed(2)} | Expense: ₹${expenseTotal.toFixed(2)} | Net: ₹${(incomeTotal - expenseTotal).toFixed(2)}`;
-  }
-  
-  window.downloadPDF = () => {
-    const element = document.getElementById('transactionTableSection');
-    html2pdf().set({
-      margin: 0.5,
-      filename: 'Transaction_History.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, logging: false },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    }).from(element).save();
-  };
-  
-  fetchTransactions();
-</script>
+    fetchTransactions();
+  </script>
 </body>
 </html>
